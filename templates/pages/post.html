@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ post.title }}</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+
+<link id="theme-style" rel="stylesheet" type="text/css" href="">
+	<style type="text/css">
+		.img-container{
+			max-width: 600px;
+		}
+
+		img{
+			width: 100%
+		}
+
+	</style>
+
+</head>
+		<!-- Previous code is for new page-->
+
+
+<body>
+
+			<!-- Following code is for the nav bar on each extra page for post-->
+
+	<div class="nav-wrapper">
+
+		<!-- Link around dots-wrapper added after tutorial video -->
+		<a href="{% url 'index' %}">
+			<div class="dots-wrapper">
+				<div id="dot-1" class="browser-dot"></div>
+				<div id="dot-2" class="browser-dot"></div>
+				<div id="dot-3" class="browser-dot"></div>
+			</div>
+		</a>
+
+		<ul id="navigation">
+	        <li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'feature' %}">Features</a></li>
+			<li><a href="index.html#contact">Contact</a></li>
+
+		</ul>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<section class="s1">
+		<div class="main-container">
+			
+
+			 <!-- by wrapping each post with divs we make the project images getting treated as an element for each one of them. -->
+					<!-- The part where it says read more has to do with the new page we added (the one called post.html) -->
+					<div  class="post">
+						<img class="thumbnail" src="{{ post.thumbnail.url }}">
+						<div class="post-preview">
+							<h6 class="post-title"><a href="#"> {{ post.title}}</a></h6>
+							<h3>{{post.overview}} </h3>
+							<p  class="post-intro">{{post.content | safe }}</p>
+							
+						</div>
+					</div>
+
+		</div>
+	</section>
+
+
+
+	<script type="text/javascript">
+		let static = "{% static 'css' %}"
+	</script>
+
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script> 
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

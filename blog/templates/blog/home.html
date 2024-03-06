@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<section class="s1">
+<div class="container">
+    <div class="row gy-4">
+    {% include './featuredPosts.html' with featuredPosts=featuredPosts %}
+    </div>
+    
+
+    <div class="row">
+        <div class="col-lg-9 col-12 mt-5">
+            {% include './latestPosts.html' with post_lists=post_lists %}
+        </div>
+        <div class="col-lg-3 col-12 mt-5">
+            {% include './sideBar.html' with categories=categories %} </div>
+    </div>
+</div>
+
+</section>
+
+
+{% endblock content %}

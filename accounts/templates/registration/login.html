@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% load static %}
+{% block title %} Login {% endblock title %} {% block content %} 
+
+<section class="s1">
+<div class="main-container">
+
+{% if messages %}
+<ul class="messages">
+
+    {% for message in messages %}
+        <li {% if message.tags %} class="{{message.tags}}" {%endif%}>{{message}}</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 mx-auto">
+            <h3>Login</h3>
+            <form method='post'>
+                {% csrf_token %}
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+                <hr>
+                <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="password" required>
+                  <br>
+                <button class="btn btn-success" style="margin-top:30px;">Login</button>
+                
+                <span  class="psw"> <a  href="{% url 'register' %}">Forgot password?</a></span>
+               
+            </form>
+        </div>
+    </div>
+</div>
+ </div>
+</section>
+{% endblock content %}

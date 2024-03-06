@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="s1">
+<div class="main-container">
+<ul class="messages">
+
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{message.tags}}" {%endif%}>{{message}}</li>
+    {% endfor %}
+</ul>
+<div class="row">
+
+    <div class="col-10 mx-auto">
+        <table class="table table-hover text-success">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Category Name</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                {% for cat in categories %} 
+                    <tr>
+                        <th>{{forloop.counter}}</th>
+                        <th>{{cat.name}}</th>
+                        <th>
+                            <a href="{% url 'blog:category-update' cat.pk %}" class="btn btn-outline-success btn-sm"> <span class="fa fa-edit"></span> </a>
+
+                            <a href="{% url 'blog:category-delete' cat.pk %}" class="btn btn-outline-danger btn-sm"> <span class="fa fa-trash"></span> </a>
+                            
+                        </th>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include 'blog/pagination.html' with obj_pagination=categories %}
+    </div>
+    
+</div>
+ </div>
+    </section>
+
+
+{% endblock content %}

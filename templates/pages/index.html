@@ -1,0 +1,290 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Francisco Guardado</title>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47692315-56"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-47692315-56');
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+	<!-- This line is to give the font customized (we can google it to my own choice)-->
+
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+	<!-- This line is to give the font customized (we can google it to my own choice) It also goes on the russo section for css-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+ <!-- Following lines of code are for the dots that change color the whole website -->
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+	<link id="theme-style" rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+ <!--The name of the class (first class) -->
+
+	<section class="s1">  
+		<div class="main-container">
+			<div class="greeting-wrapper"> <!--Class called greeting wrapper #22 -->
+				<h1>Hi, I'm Francisco Guardado</h1>
+			</div>
+
+
+			<div class="intro-wrapper">  <!--This is to get our items #24-->
+				<div class="nav-wrapper">
+
+					<!-- Link around dots-wrapper added after tutorial video -->
+					<a href="{% url 'index' %}">
+						<div class="dots-wrapper">
+							<!-- This is so we change the browser dots of a macbook. They have same class but different id #30-->
+							<div id="dot-1" class="browser-dot"></div>
+							<div id="dot-2" class="browser-dot"></div>
+							<div id="dot-3" class="browser-dot"></div>
+						</div>
+					</a>
+					
+
+					<ul id="navigation">  <!-- contact #35-->
+					 <li><a href="{% url 'index' %}">Home</a></li>
+					   <li><a href="{% url 'feature' %}">Features</a></li>
+					   <li><a href="{% url 'blog:home' %}">Blog</a></li>
+						<li><a href="{% url 'index' %}#contact">Contact</a></li>
+
+					</ul>
+				</div>
+<!--Following lines of code are for the main image and the dots to change color of the website.
+tHE ZERO is so I don't put space on the words.
+Remember to id everything (every element) so I can give color and other functions on css -->
+				<div class="left-column">
+					<img id="profile_pic" src="{% static 'images/profile.png' %}">
+					<h5 style="text-align: center;line-height: 0;margin-top: 30px; margin-bottom: 30px;">Personalize Theme</h5>
+
+					<div id="theme-options-wrapper">
+						<div data-mode="light" id="light-mode" class="theme-dot" ></div>
+						<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+						<div data-mode="green" id="green-mode" class="theme-dot"></div>
+						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
+					</div>
+
+					<p id="settings-note">*Theme settings will be saved for<br>your next vist</p>
+				</div>
+
+				<!-- The following lines are for the square of letters on the main page located to the right side of the website. In other words, positioning. This way I can understand positioning #38-->
+
+<!--Next lines we wrap from div id="preview line to class="corner with divs : this is so we make a shadow (id= "preview shadow") -->
+				<div class="right-column">
+
+					<div id="preview-shadow"> <!--41 -->
+						<div id="preview">
+							<div id="corner-tl" class="corner"></div>
+							<div id="corner-tr" class="corner"></div>
+							<h3>What I Do</h3>
+							<p>I was a lead developer in a past life, now I enjoy teaching courses.</p>
+							<!-- the reason these divs are below is because the square on the right side of the website has a second square that is transparent. That second square is a little bit below the first one. And also it has two dots so those two dots are for these divs #39-->
+							<div id="corner-br" class="corner"></div>
+							<div id="corner-bl" class="corner"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+<!--This is the about section  -->
+	<section class="s2">
+		<div class="main-container">
+
+			<div class="about-wrapper">
+				<div class="about-me">
+					<h4>More about me</h4>
+
+					<p>I build new projects just to tickle my brain and love teaching others how they're made.</p>
+
+					<p>While I keep busy teaching courses, I still take interviews in search of a great team & projects that interest me.</p>
+
+
+					<hr>
+
+					<h4>TOP EXPERTISE</h4>
+
+					
+
+					<div id="skills">
+						<ul>
+							<li>Python</li>
+							<li>Next.JS</li>
+							<li>React.JS</li>
+							<li>PHP</li>
+							<li>Drupal</li>
+							<li>WordPress</li>
+							<li>Symfony</li>
+							<li>Twig</li>
+							<li>Django</li>
+							<li>JavaScript</li>
+							<li>TypeScript</li>
+							<li>React</li>
+							<li>Postgres</li>
+							<li>MySQL</li>
+							<li>SQL</li>
+							<li>MariaDB</li>
+						</ul>
+
+						<ul>
+							<li>APIs</li>
+							<li>Troubleshooting</li>
+							<li>JS Charts</li>
+							<li>AWS (RDS, Route 53, S3, EC2, Lambda)</li>
+							<li>Azure</li>
+							<li>Heroku</li>
+							<li>HTML/CSS</li>
+							<li>Bootstrap</li>
+							<li>Saas</li>
+							<li>cPanel</li>
+							<li>Pantheon</li>
+							<li>GitLab & GitHub</li>
+							<li>Git, Lando, PowerShell & Terminus</li>
+							<li>Jenkins</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+				
+				<div class="social-links">
+					<img id="social_img" src="{% static 'images/follow.jpg' %}">
+					<h3>Find me on Twitter & Youtube</h3>
+
+					<a target="_blank" href="https://www.youtube.com/channel/UCjAsoGbAUBNiazl-dH-nc2w">YouTube: @FranciscoGuardado</a>
+					<br>
+					<a target="_blank" href="https://twitter.com/zurfaro">Twitter: @zurfaro</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="s1">
+		<div class="main-container">
+			<h3 style="text-align: center;margin-top: 30px; margin-bottom: 30px;">Some of my Recent projects</h3>
+
+			<div class="post-wrapper">
+
+              {% for post in post_list %}
+				<div> <!-- by wrapping each post with divs we make the project images getting treated as an element for each one of them. -->
+					<!-- The part where it says read more has to do with the new page we added (the one called post.html) -->
+					<div class="post">
+						<img class="thumbnail" src="{{ post.thumbnail.url }}">
+						<div class="post-preview">
+							<h6 class="post-title"><a href="{{ post.get_absolute_url }}"> {{ post.title}}</a></h6>
+							<p class="post-intro">{{ post.overview }}</p>
+							<a href="{{ post.get_absolute_url }}">Read More</a>
+						</div>
+					</div>
+				</div>
+
+            {% endfor %}
+
+
+
+			</div>
+
+
+     <!-- Pagination -->
+             <div class="row">
+                <div class="col-md-12">
+                <!-- Pagination -->
+                <nav aria-label="Page navigation example">
+              {% if post_list.has_other_pages %}
+                    <ul class="pagination pagination-template d-flex justify-content-center">
+                        {% if post_list.has_previous %}
+                        <li class="page-item"><a href="?page={{post_list.previous_page_number}}"
+                                class="page-link"> <i class="fa fa-angle-left"></i>&laquo;</a></li>
+                       
+
+                        {% else %}
+                            <li class="page-item disabled"><a class="page-link"> <i class="fa fa-angle-left"></i>&laquo;</a></li>
+                         {% endif %}
+
+
+                        {% for  i in post_list.paginator.page_range %}
+                        {% if post_list.number == i %}
+                        <li class="page-item active"><a href="?page={{ i }}" class="page-link active">{{ i }}</a></li>
+
+                        {% else %}
+                        <li class="page-item "><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+
+                        {% endif %}
+                        {% endfor %}
+
+
+
+                        {% if post_list.has_next %}
+                        <li class="page-item"><a href="?page={{post_list.next_page_number}}"
+                                class="page-link"> <i class="fa fa-angle-right"></i>&raquo;</a></li>
+                       
+
+                        {% else %}
+                            <li class="page-item disabled"><a class="page-link"> <i class="fa fa-angle-right"></i>&raquo;</a></li>
+                         {% endif %}
+                    </ul>
+					{% endif %}
+                </nav>
+                </div><!-- end col -->
+            </div><!-- end row -->
+ <!-- Pagination -->
+
+
+
+		</div>
+	</section>
+
+<!-- Contact section -->
+	<section class="s2">
+		<div class="main-container">
+			<a href=""></a>
+			<h3 style="text-align: center;">Get In Touch</h3>
+           {% include 'pages/alerts.html' %}
+			<form id="contact-form"  method="post">
+                {% csrf_token %}
+                 {{ forms }}
+				<a name="contact"></a>
+
+				<!-- Parts of the contact form -->
+
+
+				<label>Name</label>
+				<input class="input-field" type="text" name="name">
+
+				<label>Subject</label>
+				<input class="input-field" type="text" name="subject">
+
+				<label>Email</label>
+				<input class="input-field" type="text" name="email">
+
+				<label>Message</label>
+				<textarea class="input-field" name="msg"></textarea>
+
+				<input id="submit-btn" type="submit" value="Send">
+			</form>
+		</div>
+	</section> 
+
+				<!-- Following code is for files to be linked up based on color. That way we don't need to type in the color name (leave it in blank) and website will change color by pressing the dots -->
+	<script type="text/javascript">
+		let static = "{% static 'css' %}"
+	</script>
+
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script> 
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<section class="s1">
+<div class="main-container">
+    <h2 class="text-center">{{title}}</h2> <hr>
+    {% if messages %}
+        <ul class="messages text-center">
+            {% for message in messages %}
+                <li {% if message.tags %} class="text-center" {% endif %}>{{message}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="row">
+ 
+        <div class="col-lg-9 col-md-8 col-sm-12 mx-auto">
+            <form action="." method="POST" enctype="multipart/form-data">
+                {% csrf_token %} {{form.media}} <div class='form-group'>{{form|crispy}}</div>
+
+                <div class="form-group float-right">
+
+                    {% if valueBtn  == 'Add' %}
+                        <button class="btn btn-success btn-sm" value='{{valueBtn}}'>
+                            <span class="fa fa-plus"></span> Create 
+                        </button>
+                        <a href="/" class="btn btn-success btn-sm">
+                            <span class="fa fa-arrow-left"></span>
+                        </a>                  
+                    {% endif %}
+
+                    <!-- I am still a little doubtful about this following code because it implies that
+                    people could manipulate my postings. We'll see later, though
+                    Also, try to find more things to put. Not just Create and Update but some other features as well
+                    Remember that to do this I also have to code on url and views-->
+                    {% if valueBtn  == 'Update' %}
+                    <button class="btn btn-success btn-sm" value='{{valueBtn}}'>
+                        <span class="fa fa-edit"></span> Update 
+                    </button>
+                    <a href="/" class="btn btn-success btn-sm">
+                        <span class="fa fa-arrow-left"></span>
+                    </a>                  
+                {% endif %}
+                    
+                </div>
+            </form>
+
+            {% for field in form %}
+
+            {% for error in field.errors %}
+            <p class="text-danger">{{error|escape}}</p>
+
+            {% endfor %}
+
+            {% endfor %}
+            
+        </div>
+       
+    </div>
+ </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,128 @@
+ {% load static %}
+ <section class="s1">
+  
+		<div class="main-container">
+			<div class="greeting-wrapper"> <!--Class called greeting wrapper #22 -->
+				<h1>Francisco Guardado Blog</h1>
+			</div>
+
+
+			<div class="intro-wrapper">  <!--This is to get our items #24-->
+				<div class="nav-wrapper">
+
+					<!-- Link around dots-wrapper added after tutorial video -->
+					<a href="{% url 'index' %}">
+						<div class="dots-wrapper">
+							<!-- This is so we change the browser dots of a macbook. They have same class but different id #30-->
+							<div id="dot-1" class="browser-dot"></div>
+							<div id="dot-2" class="browser-dot"></div>
+							<div id="dot-3" class="browser-dot"></div>
+						</div>
+					</a>
+					
+
+					<ul id="navigation">  <!-- contact #35-->
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+					 <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+					   <li class="nav-item"><a class="nav-link" href="{% url 'feature' %}">Features</a></li>
+					   <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#contact">Contact</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'register' %}">SignUp</a></li>
+					   
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Blog
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	  <a class="dropdown-item" href="{% url 'blog:home' %}">Blog</a>
+             {% if user.is_authenticated %}
+
+                
+                    <a class="dropdown-item" href="{% url 'blog:category' %}" class="nav-link active">Category</a>
+               
+            
+                    <a class="dropdown-item" href="{% url 'blog:category-create' %}" class="nav-link active">Add Category</a>
+            
+           
+                    <a class="dropdown-item" href="{% url 'blog:post-create' %}" class="nav-link active">Add New Post</a>
+              
+
+                {% endif %} 
+
+        </div>
+      </li>
+             {% if user.is_authenticated %}
+
+                
+                    <a href="" class="nav-link active">Welcome: {{user.username}}</a>
+               
+            
+                   <a href="{% url 'logout' %}" class="nav-link active">Logout</a>
+            
+              {% else %}
+                   <a href="{% url 'login' %}" class="nav-link active">Login</a>
+              
+
+                {% endif %} 
+
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+						
+
+  
+					</ul>
+				</div>
+<!--Following lines of code are for the main image and the dots to change color of the website.
+tHE ZERO is so I don't put space on the words.
+Remember to id everything (every element) so I can give color and other functions on css -->
+				<div class="left-column">
+					<img id="profile_pic" src="{% static 'images/Francisco.jpg' %}">
+					<h5 style="text-align: center;line-height: 0;margin-top: 30px; margin-bottom: 30px;">Personalize Theme</h5>
+
+					<div id="theme-options-wrapper">
+						<div data-mode="light" id="light-mode" class="theme-dot" ></div>
+						<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+						<div data-mode="green" id="green-mode" class="theme-dot"></div>
+						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
+					</div>
+
+					<p id="settings-note">*Theme settings will be saved for<br>your next vist</p>
+				</div>
+
+				<!-- The following lines are for the square of letters on the main page located to the right side of the website. In other words, positioning. This way I can understand positioning #38-->
+
+<!--Next lines we wrap from div id="preview line to class="corner with divs : this is so we make a shadow (id= "preview shadow") -->
+				<div class="right-column">
+
+					<div id="preview-shadow"> <!--41 -->
+						<div id="preview">
+							<div id="corner-tl" class="corner"></div>
+							<div id="corner-tr" class="corner"></div>
+							<h3>What I Do</h3>
+							<p>I was a lead developer in a past life, now I enjoy teaching courses.</p>
+							<!-- the reason these divs are below is because the square on the right side of the website has a second square that is transparent. That second square is a little bit below the first one. And also it has two dots so those two dots are for these divs #39-->
+							<div id="corner-br" class="corner"></div>
+							<div id="corner-bl" class="corner"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> 
+    

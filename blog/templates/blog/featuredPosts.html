@@ -1,0 +1,32 @@
+<div class="container">
+    <h4 class="text-muted mt-5">Featured Posts</h4>
+    <hr />
+
+    <div class="row gy-4">
+        {% for post in featuredPosts %}
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="card">
+                <img src="{{post.image.url}}" class="card-img-top" />
+                <div class="card-body">
+                    <span class="tag">{{post.category|upper}}</span>
+                    <h5 class="card-title"></h5>
+                    <a href="">{{post.title}}</a>
+                    <p class="card-text">{{post.content|truncatewords:10}}</p>
+                    <p> <i class="fa fa-clock"></i> {{post.created|timesince}} ago</p>
+{#                Added Link to post details page #}
+                    <a href="{% url 'blog:post-detail' post.pk %}" class="btn btn-outline-dark">Read more...</a>
+
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'blog:post-update' post.pk %}" class="btn btn-outline-success">
+                        <span class="fa fa-pen"></span>
+                    </a>
+                    <a href="{% url 'blog:post-delete' post.pk %}" class="btn btn-outline-danger">
+                        <span class="fa fa-trash"></span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

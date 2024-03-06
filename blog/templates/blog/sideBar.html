@@ -1,0 +1,44 @@
+{% load static %}
+
+<div>
+    <br />
+    <h5 class="text-muted mb-3 mt-4">Meet the Author</h5>
+    <hr />
+    <div class="card">
+        <img src="{% static 'images/profile.png' %}" alt="" class="card-img-top" />
+        <div class="card-body">
+            <p class="card-text">
+                By Software Engineer Francisco Guardado. Enjoy all the posts and make sure to follow me on Youtube
+                 and Twitter.
+                 I make posts about relaxing music, video games and more!
+            </p>
+            <a href="" class="btn btn-secondary rounded-lg">learn more</a>
+        </div>
+    </div>
+
+        <div class="mt-5">
+            <h5 class="text-muted">Social Media</h5>
+            <p>
+                <div class="btn-group">
+                    <a href=""> <i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/zurfaro"> <i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCjAsoGbAUBNiazl-dH-nc2w/videos"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.youtube.com/channel/UCta0JKmzN_OyT1IX_Ouztqg/videos"> <i class="fab fa-youtube"></i></a>
+                    <a href="https://www.amazon.com/dp/B083ZQVMT5?customId=B075382VY7&th=1"> <i class="fab fa-amazon"></i></a>
+                </div>
+            </p>
+        </div>
+        <div class="mt-5">
+            <h5 class="text-muted">Categories</h5>
+            <hr>
+            <p>
+                <ul class="list-group">
+                    {% for category in categories %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{category.name|upper}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </p>
+        </div>
+    </div>

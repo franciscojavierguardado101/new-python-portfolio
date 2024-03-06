@@ -1,0 +1,481 @@
+:root{
+	/*  Colors given for the site*/
+	--mainColor:#eaeaea;
+	--secondaryColor:#fff;
+
+	--borderColor:#c1c1c1;
+
+	--mainText:black;
+	--secondaryText:#4b5156;
+
+	--themeDotBorder:#24292e; /*this is a variable for the effect of my dots of color. This is for the border of each
+	dot. They need to change color around the inside color*/
+
+	--previewBg:rgb(251, 249, 243, 0.8);/*this is the variable to make the two squares transparent*/
+	--previewShadow:#f0ead6; /*#41 variable*/
+
+
+
+	--buttonColor:black; 	/*  this variable is for contact page*/
+
+
+
+}
+
+/*  the margin and behavior as it scrolls up and down*/
+html, body{
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+
+/* the amount of time it takes the website to change color mode  */
+body *{
+	transition: 0.3s;
+}
+
+
+h1, h2, h3, h4, h5, h6, strong{
+	color: var(--mainText);
+	font-family: 'Russo One', sans-serif;
+	font-weight: 500; /* 21*/
+}
+/* For previus code we goes along the font on line 9*/
+
+p, li, span, label, input, textarea{
+	color: var(--secondaryText);
+	font-family: 'Roboto Mono', monospace; /* #20*/
+}
+
+
+
+
+/*This code is for text not underlined */
+a{
+	text-decoration: none;
+	color:#17a2b8;
+}
+
+ul{
+	list-style: none;/*This way the text won't have any bullets */
+}
+/* This is the font size for all the website*/
+h1 { font-size: 56px;}
+h2 { font-size: 36px;}
+h3 { font-size: 28px;}
+h4 { font-size: 24px;}
+h5 { font-size: 20px;}
+h6 { font-size: 16px;}
+
+
+.s1{
+	background-color: var(--mainColor);
+	border-bottom:1px solid var(--borderColor);
+	overflow:auto;
+}
+
+.s2{
+	background-color: var(--secondaryColor);
+	border-bottom:1px solid var(--borderColor);
+	overflow:auto;
+}
+
+
+/* This code is to recenter the content*/
+.main-container{
+	width: 1200px;
+	margin: 0 auto;
+
+}
+
+
+.greeting-wrapper{ /* This is for the area  #23*/
+	display: grid;
+	text-align: center;
+	align-content: center;
+	min-height: 10em;
+
+}
+/* this is for the color on the background and some other things like navbar*/
+.intro-wrapper{
+	background-color: var(--secondaryColor);
+	border:1px solid var(--borderColor);
+	border-radius:5px 5px 0 0;
+
+
+	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+		'nav-wrapper nav-wrapper' /* #26*/
+		'left-column right-column'
+	;
+}
+
+
+.nav-wrapper{
+	border-radius:5px 5px 0 0; /* #27*/
+	grid-area:nav-wrapper; /* this name could be whatever I want 26*/
+	border-bottom: 1px solid var(--borderColor);
+	display: flex;
+	justify-content: space-between;
+	align-items: center; /* to fix the space 29*/
+	background-color: var(--mainColor); /*this color is for color #34 */
+}
+
+#navigation a{
+	color:var(--mainText);
+}
+
+
+#navigation{
+	margin:0;
+	padding: 10px;
+}
+
+#navigation li{
+	display: inline-block;
+	margin-right: 5px;
+	margin-left:5px;
+}
+
+.dots-wrapper{  /* this is the padding and separation of the dots macbook #33*/
+	display: flex; /* This is for enlightenment28*/
+	padding: 10px;
+}
+
+/* this is for the color of the macbook dots#31*/
+#dot-1{
+	background-color:  #FC6058;/* this is for the color of the macbook dots#31*/
+}
+
+#dot-2{
+	background-color:  #FEC02F;/* this is for the color of the macbook dots#31*/
+}
+
+#dot-3{
+	background-color:  #2ACA3E;/* this is for the color of the macbook dots#31*/
+}
+
+.browser-dot{
+	background-color: black;/* this is for the color of the macbook dots#31*/
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	margin: 5px;
+
+
+      /*next three lines are the shadow generator #32 */
+	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+}
+
+/*These lines are for my main image to be right in the middle. This way I control the place where my image will be*/
+.left-column{
+	grid-area: left-column;
+	padding-top:50px;
+	padding-bottom: 50px;
+}
+
+/*#36 this is everything I do with my image(first image)*/
+#profile_pic{
+	display: block;/*these two lines are to center my image*/
+	margin:15px auto;
+
+	height: 200px;
+	width: 200px;
+	object-fit: cover;/*this line is so my image won't change on site no matter from what device I see the website*/
+	border:2px solid var(--borderColor);/*this line is so I have a border for my picture*/
+}
+
+
+#theme-options-wrapper{
+	display: flex;/*this line is so I have my dots aligned*/
+	justify-content: center;
+}
+/*these lines are for the dots of my image color*/
+.theme-dot{
+	height: 30px;
+	width: 30px;
+	background-color: black;
+	border-radius: 50%;
+
+	margin: 5px;/*this line is for some space on between the dots*/
+	border:2px solid var(--themeDotBorder); 
+
+/*these lines are for shadow effect of the lines*/
+	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+	cursor: pointer;
+}
+
+
+.theme-dot:hover{ /*this is for the hover effect (how big it'll get)*/
+	border-width: 5px;
+}
+
+
+#light-mode{ /*this is how we id on css for the dot colors | I can use the same id code for everything else*/
+	background-color: #fff;
+}
+
+#blue-mode{/*this is how we id on css for the dot colors | I can use the same id code for everything else*/
+	background-color: #192734;
+}
+
+#green-mode{/*this is how we id on css for the dot colors | I can use the same id code for everything else*/
+	background-color: #78866b;
+}
+
+#purple-mode{/*this is how we id on css for the dot colors | I can use the same id code for everything else*/
+	background-color: #7E4C74;
+}
+
+#settings-note{ /*this is id on index file as p id="settings-note*/
+	font-size: 12px;
+	font-style: italic;
+	text-align: center;
+}
+
+.right-column{
+	grid-area: right-column;
+	display: grid; /*this is to center the square*/
+	align-content: center; /*this is to center the square . note: no need to juitistify content because we want it right there*/
+
+	padding-top: 50px;
+	padding-bottom: 50px; /* These two lines are to have my images centered*/
+	/* towards the end of this css file there is a justify -content = center \ so, these lines are for those final code line*/
+}
+
+/*the following id are for the square located to the right side of the website*/
+#preview-shadow{  /*id 41 also do the variable called same way*/
+	background-color: var(--previewShadow);
+	max-width: 300px;
+	height: 180px;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+#preview{/*id*/
+	width: 300px;
+	border:1.5px solid #17a2b8; /*border of the right square main page*/
+	background-color: var(--previewBg);
+	padding:15px;
+	position: relative;
+}
+
+.corner{ /*this one goes along step #39 on index. Positioning*/
+	width:7px;
+	height: 7px;
+	border-radius: 50%;
+	border:1.5px solid #17a2b8;
+	background-color: #fff;
+	position: absolute;/*positioning of square and also helps so the size does not change from any screen device*/
+}
+
+#corner-tl{  /*positioning of square*/
+	top:-5px;
+	left: -5px
+}
+
+#corner-tr{/*positioning of square*/
+	top:-5px;
+	right: -5px
+}
+
+
+#corner-br{/*positioning of square*/
+	bottom:-5px;
+	right: -5px
+}
+
+
+#corner-bl{/*positioning of square*/
+	bottom:-5px;
+	left: -5px
+}
+
+
+/* This is for the about me section | however many columns I want they will always look
+like this (size as minmax (320px and 1fr) this is for all the columns I want to make
+on the index file and the size as well as we change from laptop to phone*/
+.about-wrapper{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	padding-bottom: 50px;
+	padding-top: 50px;
+	gap:100px; (gap )
+}
+
+
+#skills{
+	display: flex;
+	justify-content: space-evenly;
+	background-color: var(--previewShadow);
+}
+
+.social-links{
+	display: grid;
+	align-content: center;
+	text-align: center; /* this is so image and letters don't touch*/
+}
+
+#social_img{
+	width: 100%; 
+	/* This is for the image called "follow" so it's changed to 100% and looks perfect */
+}
+
+
+.post-wrapper{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 320px);
+	gap:20px;
+	justify-content: center;
+	padding-bottom: 50px;
+}
+
+.post{
+	border:1px solid var(--borderColor);
+	-webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+	box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+	/* previous lines are for the shadows on the media section of the website*/
+}
+
+.thumbnail{
+	display: block;
+	width: 100%;
+	height:400px;
+	object-fit: cover;
+}
+
+.post-preview{
+	/* this is the website backgroud for just the social part*/
+	background-color: #fff;
+	padding:15px;
+}
+
+
+/* post-title and post-intro are for the color of the images of the projects I show section. This way,
+the color of those images don't chage as I change the website color as a whole*/
+.post-title{
+	color:black;
+	margin: 0;
+}
+
+.post-intro{
+	color:#4b5156;
+	font-size: 14px;
+}
+
+
+
+	/* Parts of the contact form*/
+
+
+#contact-form{
+	display: block;
+	max-width: 600px;
+	margin: 0 auto;
+	border: 1px solid var(--borderColor);
+	padding: 15px;
+	border-radius: 5px;
+	background-color: var(--mainColor);
+	margin-bottom: 50px;
+
+}
+
+#contact-form label{
+	line-height: 2.7em;
+}
+
+#contact-form textarea{
+	min-height: 100px;
+	font-size: 14px;
+}
+
+
+.input-field{
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom:10px; 
+	background-color: var(--secondaryColor);
+	border-radius: 5px;
+	border:1px solid var(--borderColor);
+	font-size: 14px;
+}
+
+	/*  following code is contact page button. Treated as a variable so the color of the button changes
+	as we change color for our website*/
+
+#submit-btn{
+	margin-top: 10px;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom:10px; 
+	color: #fff;
+	background-color: var(--buttonColor);
+	border:none;
+}
+
+/* Media query this line is to have content centered for mobile phone */
+@media screen and (max-width: 1200px){
+	.main-container{
+		width: 95%;  
+/* It's 95% so I have some space left*/
+	}
+}
+
+@media screen and (max-width: 800px){
+	.intro-wrapper{
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+			'nav-wrapper'
+			'left-column'
+			'right-column'
+			/* this is to get everythig center and when I make the website smaller the column goes down */
+			/* So, basically what I am doing with these lines are controlling how it woulde view*/
+		;
+	}
+
+	.right-column{
+		justify-content: center;
+		/* previous image is to center my images*/
+	}
+
+}
+
+@media screen and (max-width: 400px){
+	#preview-shadow{
+		max-width: 280px;
+		height: 180px;
+		padding-left: 10px;
+		padding-top: 10px;
+	}
+
+	#preview{
+		width: 280px;
+
+	}
+
+}
+
+
+
+/* navbar navbar navabr new work*/
+.navbar .dropdown-menu {
+  background-color: inherit
+}
+
+/* and this styles the dropdwon trigger link, when open */
+.navbar .dropdown.show a { 
+  background-color: inherit
+}

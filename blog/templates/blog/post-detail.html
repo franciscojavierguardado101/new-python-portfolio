@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+    <style>
+        .image {
+            width: 800px;
+            height: auto;
+
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+        }
+
+        .single-post-area .blog_details {
+            padding-top: 26px;
+        }
+
+        .single-post-area .blog_details {
+            box-shadow: none;
+            padding: 0;
+
+        }
+
+        .meta {
+            color: #999999;
+            margin-bottom: 1em;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<section class="s1">
+<div class="main-container">
+    <div class="container single-post-area mt-4">
+        <div class="image">
+            <img class="img-fluid" src="{{ post.image.url }}">
+        </div>
+        <div class="blog_details">
+            <h2 class="mt-2 mb-2">{{ post.title }}</h2>
+            <div class="meta">
+                <span><i class="fa fa-list-alt me-2" aria-hidden="true"></i> {{ post.category }}</span> |
+                <span><i class="fa fa-tag me-2 ms-2" aria-hidden="true"></i> {{ post.tags }}</span> |
+                <span><i class="fa fa-calendar me-2 ms-2"></i> {{ post.created }}</span>
+            </div>
+            <div class="content">
+                <p>{{ post.content | urlize }}</p>
+            </div>
+        </div>
+    </div>
+   </div>
+    </section>
+{% endblock %}
